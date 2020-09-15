@@ -1,0 +1,17 @@
+#SYSTEM
+.DS_Store
+.idea
+.vscode
+#DDEV
+.ddev/*
+!.ddev/commands/web/drush
+!.ddev/config.yaml
+!.ddev/docker-compose.browsersync.yaml
+#DRUPAL
+web/profiles
+web/modules/contrib/*
+web/sites/default/files
+web/sites/default/settings.php
+!web/sites/default/settings.ddev.php
+vendor
+node_modules
