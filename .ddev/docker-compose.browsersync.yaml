@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  web:
+    ports:
+    # En esta sección definimos el puerto que va a utilizar el proceso
+    # dentro del contenedor web
+      - "3000"
+    environment:
+    # En esa sección extendemos la variable de entorno HTTP_EXPOSE, que
+    # utiliza el servicio ddev_router con la relación de puertos
+    # PUERTO_EXTERNO:PUERTO_INTERNO.
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,8300:3000
+    # Nosotros hemos añadido al final de la lista el puerto 8300
+    # relacionado con el puerto interno 3000.
